@@ -12,6 +12,7 @@ import java.util.stream.Collectors;
 @Service
 @Component
 public class CarService {
+
     private List<Car> carList;
 
     {
@@ -23,10 +24,9 @@ public class CarService {
         carList.add(new Car(5, "SHKODA", 31));
     }
 
-    public List<Car> carCountList(Integer count){
-        if(count == null ||  count > 5 ) return carList;
+    public List<Car> carCountList(Integer count) {
+        if (count == null || count > 5) return carList;
         return carList.stream().limit(count).collect(Collectors.toList());
-
     }
 }
 
